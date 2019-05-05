@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/root"
+	android:background="@drawable/topbar_bg"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<RelativeLayout
+		android:id="@+id/headerWrapper"
+		android:background="@drawable/topbar_bg"
+		android:layout_width="fill_parent"
+		android:layout_height="45.0dip">
+
+		<Button
+			android:textSize="15.0sp"
+			android:textColor="#ffffffff"
+			android:gravity="center"
+			android:id="@+id/textsizeminus"
+			android:background="@drawable/button"
+			android:layout_width="35.0dip"
+			android:layout_height="35.0dip"
+			android:layout_marginLeft="15.0dip"
+			android:text="-"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:onClick="minusTextsize"/>
+
+		<TextView
+			android:textSize="16.0sp"
+			android:textColor="#ffffffff"
+			android:gravity="center"
+			android:id="@+id/header"
+			android:padding="8.0dip"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"/>
+
+		<Button
+			android:textSize="15.0sp"
+			android:textColor="#ffffffff"
+			android:gravity="center"
+			android:id="@+id/textsizeplus"
+			android:background="@drawable/button"
+			android:layout_width="35.0dip"
+			android:layout_height="35.0dip"
+			android:layout_marginRight="15.0dip"
+			android:text="+"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:onClick="plusTextsize"/>
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:id="@+id/bottomLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="54.0dip"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true">
+
+		<ImageView
+			android:background="@drawable/circle"
+			android:layout_width="45.0dip"
+			android:layout_height="45.0dip"
+			android:layout_alignParentBottom="true"/>
+
+		<ImageButton
+			android:textColor="#ffffffff"
+			android:id="@+id/contentsBtn"
+			android:background="@drawable/home_book"
+			android:padding="5.0dip"
+			android:layout_width="55.0dip"
+			android:layout_height="55.0dip"
+			android:layout_marginLeft="45.0dip"
+			android:onClick="showContents"/>
+
+		<ImageView
+			android:id="@+id/tape"
+			android:background="@drawable/tape_off"
+			android:layout_width="65.0dip"
+			android:layout_height="65.0dip"
+			android:layout_marginLeft="40.0dip"
+			android:onClick="handleTape"/>
+
+	</LinearLayout>
+
+	<ScrollView
+		android:background="#F8F8FFFF"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_margin="3.0dip"
+		android:layout_above="@+id/bottomLayout"
+		android:layout_below="@+id/headerWrapper">
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:id="@+id/parateWrapper"
+				android:paddingTop="10.0dip"
+				android:paddingBottom="10.0dip"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+
+			<TextView
+				android:textSize="16.0sp"
+				android:textColor="#ff000000"
+				android:id="@+id/contents_tv"
+				android:background="#F8F8FFFF"
+				android:padding="10.0dip"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+	<RelativeLayout
+		android:orientation="vertical"
+		android:id="@+id/splash"
+		android:background="@drawable/splash_bg"
+		android:visibility="visible"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<TextView
+			android:textSize="22.0sp"
+			android:textColor="#ffffffff"
+			android:id="@+id/splashtv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="10dp"/>
+
+		<LinearLayout
+			android:gravity="center"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_above="@+id/splashtv">
+
+			<ImageView
+				android:background="@drawable/circle"
+				android:layout_width="150.0dip"
+				android:layout_height="150.0dip"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:textSize="16.0sp"
+			android:textColor="#ffffffff"
+			android:id="@+id/splash_small_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="25.0dip"
+			android:text=" "
+			android:layout_below="@+id/splashtv"
+			android:layout_centerHorizontal="true"
+			android:padding="10dp"/>
+
+		<TextView
+			android:textSize="13.0sp"
+			android:textColor="#B57562"
+			android:gravity="center"
+			android:id="@+id/splash_bottom_tv"
+			android:padding="5.0dip"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Text"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"/>
+
+	</RelativeLayout>
+
+</RelativeLayout>
+
