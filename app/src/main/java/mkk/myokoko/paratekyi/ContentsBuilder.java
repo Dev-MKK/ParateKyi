@@ -26,9 +26,6 @@ public class ContentsBuilder {
         mData = new ArrayList<>();
     }
 
-    /*
-     * Enabled aggressive block sorting
-     */
     private void makeSpannedText() {
         Spannable wordToSpan = new SpannableString(body);
 
@@ -86,7 +83,7 @@ public class ContentsBuilder {
             body.append(toMyanmarDigit(no))
 			.append("။   ")
 			.append(title)
-			.append("\n");
+			.append("\n\n");
             mData.add(new WordAndColor(title, Color.BLACK));
             mTitles.add(title);
             ++no;

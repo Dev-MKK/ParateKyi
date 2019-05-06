@@ -53,13 +53,13 @@ implements ContentsBuilder.ContentsBuilderClickListener {
     }
 	
 	private void changeHeader(String title) {
-        headerTv.setText(toMyanmar(title));
+        headerTv.setText(title);
     }
 
     private void createContents() {
 		contentsTv.setVisibility(View.VISIBLE);
         handleBottomButtons(false);
-        changeHeader("မာတိကာ");
+        changeHeader(toMyanmar("မာတိကာ"));
         isTape(false);
         shutDownKaraokePlayer();
         CB = new ContentsBuilder(this).makeTitles(

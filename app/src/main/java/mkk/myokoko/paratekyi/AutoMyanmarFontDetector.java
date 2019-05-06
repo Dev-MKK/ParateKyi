@@ -27,7 +27,7 @@ public class AutoMyanmarFontDetector {
 	private static boolean isZawGyi = true;
 	private final static String FONT_KEY = "Font Key";
 	private Typeface mTypeface;
-	private static boolean debugging = true;
+	private static boolean debugging = false;
 	
 
 	public AutoMyanmarFontDetector(Context context, View view) {
@@ -81,7 +81,7 @@ public class AutoMyanmarFontDetector {
 			((ViewGroup)mView).addView(fontTv);
 		}
 		
-		/*   Got from MMDetect github respo:    */
+		/*   Got from MDetect github respo:    */
 		fontTv.setText("\u1000");
         fontTv.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int length1 = fontTv.getMeasuredWidth();
