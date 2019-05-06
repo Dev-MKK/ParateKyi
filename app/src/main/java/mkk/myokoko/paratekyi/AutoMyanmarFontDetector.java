@@ -81,7 +81,11 @@ public class AutoMyanmarFontDetector {
 			((ViewGroup)mView).addView(fontTv);
 		}
 		
-		/*   Got from MDetect github respo:    */
+		/*   Got from MDetect github respo: 
+		 *	https://github.com/dev-myatminsoe/MDetect
+		 *	It works like a charm. Thanks Myat Min Soe!
+		*/
+		
 		fontTv.setText("\u1000");
         fontTv.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int length1 = fontTv.getMeasuredWidth();

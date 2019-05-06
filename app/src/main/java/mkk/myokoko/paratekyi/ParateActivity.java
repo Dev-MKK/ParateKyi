@@ -159,7 +159,7 @@ implements ContentsBuilder.ContentsBuilderClickListener {
     public void OnContentTitleClick(int index) {
         try {
 			needTip = !needTip;
-			toParateToast(toMyanmar("ခဏေလးပါ ..."),Toast.LENGTH_SHORT);
+			toParateToast("ခဏေလးပါ ...",Toast.LENGTH_SHORT);
 			needTip = !needTip;
             ArrayList<String> list = new FileReader(this).readFile(index);
             Parate.show(list);
