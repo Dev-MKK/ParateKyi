@@ -137,16 +137,36 @@ implements ContentsBuilder.ContentsBuilderClickListener {
         toast.setView(view);
         toast.show();
     }
+	
+	private void toParateToast(String msg, int duration) {
+        if (!needTip) {
+            return;
+        }
+        View view = getLayoutInflater().inflate(R.layout.toast, (ViewGroup)findViewById(R.id.twrapper));
+        view.setBackgroundResource(R.drawable.splash_bg);
+        ((ImageView)view.findViewById(R.id.timage)).setBackgroundResource(R.drawable.circle);
+		((TextView)view.findViewById(R.id.ttitle)).setTypeface(typeface);
+        ((TextView)view.findViewById(R.id.ttitle)).setText(toMyanmar(msg));
+        Toast toast = new Toast(this);
+        toast.setGravity(Gravity.LEFT, dipToPixel(5), dipToPixel(100));
+        toast.setDuration(duration);
+        toast.setView(view);
+        toast.show();
+    }
 
 
     @Override
     public void OnContentTitleClick(int index) {
         try {
+			needTip = !needTip;
+			toParateToast(toMyanmar("ခဏေလးပါ ..."),Toast.LENGTH_SHORT);
+			needTip = !needTip;
             ArrayList<String> list = new FileReader(this).readFile(index);
             Parate.show(list);
             mKaraokePlayer.locateKaraokeTextViews(Parate.getTvs());
             mKaraokePlayer.loadKaraokeFiles(index,list);
             contentsTv.setVisibility(View.GONE);
+			
         }
         catch (Exception e) {
             handleBottomButtons(false);
