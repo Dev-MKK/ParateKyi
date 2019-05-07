@@ -17,16 +17,15 @@ public class FileReader {
         mContext = context;
     }
 
-    private String toMyanmar(String text) {
-        return ParateActivity.AMFD.writeZawgyi(text);
-    }
-
     public ArrayList<String> readFile(int fileindex) throws IOException {
         lines.clear();
-        BufferedReader br = new BufferedReader(new InputStreamReader(mContext.getAssets().open("parate_" + fileindex)));
+        BufferedReader br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(
+							(ParateActivity.AMFD.isZawgyi() ? "zawgyi" : "unicode")
+							+ "/parate_" + fileindex))
+						);
 		String line;
         while((line = br.readLine()) != null) {
-            lines.add(toMyanmar(line.replace("$$","$ $")));
+            lines.add(line.replace("$$","$ $"));
         }
 		return lines;
     }

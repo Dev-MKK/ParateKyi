@@ -7,6 +7,7 @@ import android.os.*;
 import android.view.*;
 import android.widget.*;
 import java.util.*;
+import java.io.*;
 
 public class ParateActivity extends Activity 
 implements ContentsBuilder.ContentsBuilderClickListener {
@@ -59,22 +60,22 @@ implements ContentsBuilder.ContentsBuilderClickListener {
     private void createContents() {
 		contentsTv.setVisibility(View.VISIBLE);
         handleBottomButtons(false);
-        changeHeader(toMyanmar("မာတိကာ"));
+        changeHeader(AMFD.writeUnicode("မာတိကာ"));
         isTape(false);
         shutDownKaraokePlayer();
         CB = new ContentsBuilder(this).makeTitles(
-				"ပရိတ္နိဒါန္း",
-				"မဂၤလသုတ္",
-				"ရတနသုတ္",
-				"ေမတၱာသုတ္",
-				"ခႏၶသုတ္",
-				"ေမာရသုတ္",
-				"ဝဋၬသုတ္",
-				"ဓဇဂၢသုတ္",
-				"အာဋာနာဋိယသုတ္",
-				"အဂုၤလိမာလသုတ္",
-				"ေဗာဇၩဂၤသုတ္",
-				"ပုဗၺဏသုတ္"
+				AMFD.writeUnicode("ပရိတ်နိဒါန်း"),
+				AMFD.writeUnicode("မင်္ဂလသုတ်"),
+				AMFD.writeUnicode("ရတနသုတ်"),
+				AMFD.writeUnicode("​​မေတ္တသုတ်"),
+				AMFD.writeUnicode("ခန္ဓသုတ်"),
+				AMFD.writeUnicode("​မောရသုတ်"),
+				AMFD.writeUnicode("ဝဋ္ဋသုတ်"),
+				AMFD.writeUnicode("ဓဇဂ္ဂသုတ်"),
+				AMFD.writeUnicode("အာဋာနာဋိယသုတ်"),
+				AMFD.writeUnicode("အင်္ဂုလိမာလသုတ်"),
+				AMFD.writeUnicode("ဗောဇ္ဈင်္ဂသုတ်"),
+				AMFD.writeUnicode("ပုဗ္ဗဏှသုတ်")
 				)
 				.showAt(contentsTv);
         toParateToast("မိမိ ပူေဇာ္လိုေသာ သုတ္ကို လက္ျဖင့္ ေထာက္ဖြင့္ပါ။");
@@ -137,30 +138,10 @@ implements ContentsBuilder.ContentsBuilderClickListener {
         toast.setView(view);
         toast.show();
     }
-	
-	private void toParateToast(String msg, int duration) {
-        if (!needTip) {
-            return;
-        }
-        View view = getLayoutInflater().inflate(R.layout.toast, (ViewGroup)findViewById(R.id.twrapper));
-        view.setBackgroundResource(R.drawable.splash_bg);
-        ((ImageView)view.findViewById(R.id.timage)).setBackgroundResource(R.drawable.circle);
-		((TextView)view.findViewById(R.id.ttitle)).setTypeface(typeface);
-        ((TextView)view.findViewById(R.id.ttitle)).setText(toMyanmar(msg));
-        Toast toast = new Toast(this);
-        toast.setGravity(Gravity.LEFT, dipToPixel(5), dipToPixel(100));
-        toast.setDuration(duration);
-        toast.setView(view);
-        toast.show();
-    }
-
 
     @Override
     public void OnContentTitleClick(int index) {
         try {
-			needTip = !needTip;
-			toParateToast("ခဏေလးပါ ...",Toast.LENGTH_SHORT);
-			needTip = !needTip;
             ArrayList<String> list = new FileReader(this).readFile(index);
             Parate.show(list);
             mKaraokePlayer.locateKaraokeTextViews(Parate.getTvs());
@@ -173,7 +154,7 @@ implements ContentsBuilder.ContentsBuilderClickListener {
             isTape(false);
 			Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
             return;
-        }
+        } 
         changeHeader(CB.getTitle(index));
         handleBottomButtons(true);
         isTape(true);

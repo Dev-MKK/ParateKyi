@@ -183,5 +183,9 @@ public class AutoMyanmarFontDetector {
 	public String writeUnicode(String unicode) {
 		return correctTextFromUnicodeInput(unicode);
 	}
+	
+	public boolean isZawgyi() {
+		return isZawGyi;
+	}
 
 } //Main

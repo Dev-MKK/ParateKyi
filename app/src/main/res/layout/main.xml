@@ -108,7 +108,7 @@
 				android:layout_height="wrap_content"/>
 
 			<TextView
-				android:textSize="16.0sp"
+				android:textSize="18.0sp"
 				android:textColor="#ff000000"
 				android:id="@+id/contents_tv"
 				android:background="#F8F8FFFF"

@@ -9,6 +9,7 @@ import android.view.*;
 import android.widget.*;
 import java.util.*;
 import android.text.method.*;
+import java.io.*;
 
 public class ContentsBuilder {
     private StringBuilder body = new StringBuilder();
@@ -46,6 +47,11 @@ public class ContentsBuilder {
 			}
 			index++;
 		}  
+		if(ParateActivity.AMFD.isZawgyi()) {
+			mTextView.setLineSpacing(10,1.5f);
+		} else {
+			mTextView.setLineSpacing(10,1);
+		}
 		mTextView.setText(wordToSpan, TextView.BufferType.SPANNABLE);
 		mTextView.setMovementMethod(new LinkMovementMethod());
     }
@@ -65,10 +71,6 @@ public class ContentsBuilder {
 		);
 	}
 
-    private String toMyanmar(String text) {
-        return ParateActivity.AMFD.writeZawgyi(text);
-    }
-
     public String getTitle(int n) {
         return mTitles.get(n - 1);
     }
@@ -79,11 +81,11 @@ public class ContentsBuilder {
         mTitles.clear();
         int i = 0;
         while (i < titles.length) {
-            String title = toMyanmar(titles[i]);
+            String title = (titles[i]);
             body.append(toMyanmarDigit(no))
 			.append("။   ")
 			.append(title)
-			.append("\n\n");
+			.append("\n");
             mData.add(new WordAndColor(title, Color.BLACK));
             mTitles.add(title);
             ++no;
