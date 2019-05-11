@@ -112,6 +112,7 @@
 				android:textColor="#ff000000"
 				android:id="@+id/contents_tv"
 				android:background="#F8F8FFFF"
+				android:textStyle="normal"
 				android:padding="10.0dip"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"/>

@@ -52,6 +52,7 @@ public class ContentsBuilder {
 		} else {
 			mTextView.setLineSpacing(10,1);
 		}
+		mTextView.setTypeface(mTextView.getTypeface(),Typeface.NORMAL);
 		mTextView.setText(wordToSpan, TextView.BufferType.SPANNABLE);
 		mTextView.setMovementMethod(new LinkMovementMethod());
     }

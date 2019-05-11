@@ -34,6 +34,7 @@ public class Parate {
         TextView numberTv = new TextView(this.mContext); 
         numberTv.setTextSize((float)this.numberSize); 
 		numberTv.setTypeface(ParateActivity.typeface);
+		numberTv.setTypeface(numberTv.getTypeface(),Typeface.NORMAL);
         numberTv.setGravity(Gravity.LEFT & Gravity.CENTER_VERTICAL); 
 		numberTv.setPadding(10,10,0,10);
         numberTv.setMinimumWidth(dipToPixel(30)); 
@@ -52,6 +53,7 @@ public class Parate {
 		TextView underTv = new TextView(mContext); 
         underTv.setTextSize((float)parliSize); 
 		underTv.setTypeface(ParateActivity.typeface);
+		underTv.setTypeface(underTv.getTypeface(),Typeface.NORMAL);
         underTv.setTextColor(Color.BLACK); 
 		underTv.setPadding(10,10,10,10);
         String string4 = line.isEmpty() ? " " : line; 
@@ -61,6 +63,7 @@ public class Parate {
         TextView parliTv = new TextView(mContext); 
         parliTv.setTextSize((float)parliSize); 
 		parliTv.setTypeface(ParateActivity.typeface);
+		parliTv.setTypeface(parliTv.getTypeface(),Typeface.NORMAL);
         parliTv.setTextColor(Color.BLACK); 
 		parliTv.setPadding(10,10,10,10);
        // String string4 = line.isEmpty() ? " " : line; 
