@@ -61,7 +61,7 @@ public class AutoMyanmarFontDetector {
 			default : break;
 		}
 		
-	}
+	} 
 
 	private void startFontDetecting() {
 

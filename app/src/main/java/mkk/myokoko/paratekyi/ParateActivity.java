@@ -42,6 +42,7 @@ implements ContentsBuilder.ContentsBuilderClickListener {
         splashSmallTv.setText(toMyanmar(" ပါဠိ - အသံ "));
         contentsTv.setTypeface(typeface);
         headerTv.setTypeface(typeface);
+		headerTv.setKeepScreenOn(true);
         splashTv = (TextView)findViewById(R.id.splashtv);
         splashTv.setTypeface(typeface);
         splashTv.setText(toMyanmar("ပရိတ္ၾကီး ဝတ္ရြတ္စဥ္"));

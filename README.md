@@ -1,5 +1,7 @@
 # ParateKyi 
 
+ဗုဒၶဘာသာဝင္တိုင္း မိမိဖုန္းထဲမွာ ေဆာင္ထားႏိုင္ဖို႔ ပရိတ္ၾကီး (၁၁) သုတ္ apk ျဖစ္ပါတယ္။ ပရိတ္ အသံပါ ပါပါတယ္။ app က 15 MB ခန္႔ ရွိပါတယ္။ [ဒီေနရာက ေဒါင္းယူပါ။](https://www.mediafire.com/download/34oxfw9idiz05o8)
+
 This is the respository for Buddha Parate Kyi app for Android.
 
 <img src="screenshot_1.png" width="300">        <img src="screenshot_2.png" width="300">	<img src="screenshot_3.png" width="300">
